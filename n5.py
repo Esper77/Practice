@@ -1,7 +1,20 @@
 import utils
 
-for x in range(1, 256):
-    n = utils.bit_inversion(utils.to_byte(x-1))
-    if int(n, 2) == 18:
+for x in range(2, 10000):
+    n = x
+    if n % 2 == 0:
+        n //= 2
+    else:
+        n -= 1
+    if n % 3 == 0:
+        n //= 3
+    else:
+        n -= 1
+    if n % 7 == 0:
+        n //= 7
+    else:
+        n -= 1
+
+    if n == 2:
         print(x)
 

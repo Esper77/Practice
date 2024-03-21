@@ -1,8 +1,9 @@
-def f(n):
-    if n < 46:
-        return f(n*2) + f(n*2+1) + f(n+1)
-    if n > 46:
+def f(n, t):
+    if n < t:
+        return f(n+1, t) + f(n*2, t) + f(n*4, t)
+    if n > t:
         return 0
     return 1
 
-print(f(5))
+
+print(f(1, 17))
